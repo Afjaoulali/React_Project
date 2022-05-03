@@ -1,24 +1,14 @@
-console.log("application react");
+import React from "react";
+import { render } from "react-dom";
 
-if (true) {
-  console.log("cgghjjg");
-}
-import {
-  bonjour,
-  bonjour2,
-  displayNotes,
-  displayNotesClassique,
-  displayStudentName,
-  student,
-  calculateAverageClassique,
-  calculateAverage,
-  displayStudent,
-} from "./exos/revision";
+const name = "Afaf";
+const html = (
+  <div>
+    <h1>Bonjour {name}</h1>
+    <p>Bienvenue sur l'application</p>
+  </div>
+);
 
-console.log(bonjour("John"));
-console.log(bonjour2("john"));
-console.log(displayStudentName(student));
-console.log(displayNotesClassique(student.notes));
-console.log(calculateAverage(student.notes));
-console.log(calculateAverageClassique(student.notes));
-console.log(displayStudent(student));
+const div = document.querySelector("#root");
+
+render(html, div);
