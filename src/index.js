@@ -12,7 +12,8 @@ function Hello(props) {
 
 const html = (
   <div>
-    <Hello name="John" age={34} />
+    <Hello name="Afaf" age={26} />
+    <Hello name="David" age={28} />
   </div>
 );
 
