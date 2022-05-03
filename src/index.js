@@ -1,19 +1,21 @@
 import React from "react";
 import { render } from "react-dom";
 
-function Hello(props) {
+function Hello({ name, age }) {
   return (
     <div>
-      <h1>Bonjour {props.name}</h1>
-      <p>Vous avez {props.age} ans</p>
+      <h1>Bonjour {name}</h1>
+      <p>Vous avez {age} ans</p>
     </div>
   );
 }
 
 const html = (
   <div>
-    <Hello name="Afaf" age={26} />
-    <Hello name="David" age={28} />
+    <Hello name="John" age={34} />
+    <Hello name="Jane" age={12} />
+    <Hello name="Rose" age={21} />
+    <Hello name="Jack" age={42} />
   </div>
 );
 
