@@ -9,7 +9,7 @@
  * dans le fichier `index.js`
  */
 export function bonjour(name) {
-  return `Bonjour ${name}, comment allez-vous ?`;
+  return `Bonjour ${name}, comment allez-vous ?`
 }
 
 /**
@@ -21,7 +21,7 @@ export function bonjour(name) {
  * Exporter la fonction et importer puis tester
  * dans le fichier `index.js`
  */
-export const bonjour2 = (name) => bonjour(name);
+export const bonjour2 = name => bonjour(name)
 
 /**
  * Exo 3
@@ -36,17 +36,17 @@ export const bonjour2 = (name) => bonjour(name);
  * dans le fichier `index.js`
  */
 export const student = {
-  firstname: "John",
-  lastname: "Doe",
+  firstname: 'John',
+  lastname: 'Doe',
   age: 24,
   notes: [12, 13, 18, 9, 8, 15],
-};
+}
 
 export const displayStudentName = ({
-  firstname = "Inconnue",
-  lastname = "Inconnue",
-  age = "Inconnue",
-} = {}) => `Élève ${firstname} ${lastname}, ${age} ans`;
+  firstname = 'Inconnue',
+  lastname = 'Inconnue',
+  age = 'Inconnue',
+} = {}) => `Élève ${firstname} ${lastname}, ${age} ans`
 
 /**
  * Exo 4
@@ -65,21 +65,21 @@ export const displayStudentName = ({
  * dans le fichier `index.js`
  */
 export function displayNotesClassique(notes) {
-  let formatedNotes = [];
+  let formatedNotes = []
 
   for (let note of notes) {
     if (note < 10) {
-      formatedNotes.push(`0${note}/20`);
+      formatedNotes.push(`0${note}/20`)
     } else {
-      formatedNotes.push(`${note}/20`);
+      formatedNotes.push(`${note}/20`)
     }
   }
 
-  return formatedNotes.join(", ");
+  return formatedNotes.join(', ')
 }
 
-export const displayNotes = (notes) =>
-  notes.map((note) => (note < 10 ? `0${note}/20` : `${note}/20`)).join(", ");
+export const displayNotes = notes =>
+  notes.map(note => (note < 10 ? `0${note}/20` : `${note}/20`)).join(', ')
 
 /**
  * Exo 5
@@ -95,17 +95,17 @@ export const displayNotes = (notes) =>
  * dans le fichier `index.js`
  */
 export function calculateAverageClassique(notes) {
-  let total = 0;
+  let total = 0
 
   for (let note of notes) {
-    total += note;
+    total += note
   }
 
-  return total / notes.length;
+  return total / notes.length
 }
 
-export const calculateAverage = (notes) =>
-  notes.reduce((accumulator, note) => accumulator + note, 0) / notes.length;
+export const calculateAverage = notes =>
+  notes.reduce((accumulator, note) => accumulator + note, 0) / notes.length
 
 /**
  * Exo 6
@@ -119,7 +119,7 @@ export const calculateAverage = (notes) =>
  * moyenne : 12,5/20
  */
 export const displayStudent = ({ firstname, lastname, age, notes }) => `
-    ${displayStudentName({ firstname, lastname, age })}
-    notes : ${displayNotes(notes)}
-    moyenne : ${calculateAverage(notes)} / 20
-  `;
+  ${displayStudentName({ firstname, lastname, age })}
+  notes : ${displayNotes(notes)}
+  moyenne : ${calculateAverage(notes)} / 20
+`

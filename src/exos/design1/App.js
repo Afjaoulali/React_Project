@@ -1,7 +1,7 @@
-import React from "react";
-import HeaderBar from "./HeaderBar";
-import Content from "./Content";
-import FooterBar from "./FooterBar";
+import React from 'react'
+import HeaderBar from './HeaderBar'
+import Content from './Content'
+import FooterBar from './FooterBar'
 
 /**
  * Contient tout les composants (ainsi
@@ -16,5 +16,5 @@ export default function App() {
       <Content></Content>
       <FooterBar></FooterBar>
     </>
-  );
+  )
 }
