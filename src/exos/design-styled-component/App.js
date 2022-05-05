@@ -1,5 +1,15 @@
-import React from "react";
-import { HeaderBar } from "./styled";
+import React from 'react'
+import {
+  Card,
+  CardItem,
+  CardNotif,
+  Content,
+  FooterBar,
+  FooterMenu,
+  HeaderBar,
+  Logo,
+  Menu,
+} from './styled'
 
 export default function App() {
   return (
@@ -23,5 +33,5 @@ export default function App() {
         <FooterMenu />
       </FooterBar>
     </>
-  );
+  )
 }
