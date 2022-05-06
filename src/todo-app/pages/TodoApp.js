@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   AddTodoButton,
   InputText,
@@ -11,12 +12,25 @@ import {
 export default function TodoApp() {
   const [newLabel, setNewLabel] = useState("");
   const [todoList, setTodoList] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Récupération de l'utilisateur connécté
-    const user = JSON.parse(window.localStorage.getItem("user"));
+    const fetchTodos = async () => {
+      // Récupération de l'utilisateur connécté
+      const user = JSON.parse(window.localStorage.getItem("user"));
 
-    console.log(user);
+      if (!user) {
+        navigate("/connexion");
+
+        return;
+      }
+
+      // 1. Véifier si l'utilisateur à dèja une todo list
+      //   -> Si oui, alors on récupére les todos de cette list
+      //   -> Si non, alors on créé une nouvelle todo list
+    };
+
+    fetchTodos();
   }, []);
 
   const changeNewLabel = (ev) => setNewLabel(ev.target.value);
