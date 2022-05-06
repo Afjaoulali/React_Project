@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 /**
  * Ici, en utilisant des event, ainsi que un state,
@@ -6,15 +6,15 @@ import React, { useState } from "react";
  */
 
 export default function AppEvent() {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0)
 
   const onPlus = () => {
-    setCounter(counter + 1);
-  };
+    setCounter(counter + 1)
+  }
 
   const onMinus = () => {
-    setCounter(counter - 1);
-  };
+    setCounter(counter - 1)
+  }
 
   return (
     <div>
@@ -22,5 +22,5 @@ export default function AppEvent() {
       <p>Conteur : {counter}</p>
       <button onClick={onPlus}>+</button>
     </div>
-  );
+  )
 }

@@ -1,47 +1,43 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../firebase";
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { auth } from '../firebase'
 
 export default function Login() {
-  const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const navigate = useNavigate()
 
-  const changeEmail = (ev) => setEmail(ev.target.value);
-  const changePassword = (ev) => setPassword(ev.target.value);
-  const sendForm = async (ev) => {
-    ev.preventDefault();
-    setLoading(true);
+  const changeEmail = ev => setEmail(ev.target.value)
+  const changePassword = ev => setPassword(ev.target.value)
+  const sendForm = async ev => {
+    ev.preventDefault()
+    setLoading(true)
 
     try {
-      const credential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      const credential = await signInWithEmailAndPassword(auth, email, password)
 
       // On enregistre l'utilisateur dans le localStorage
       // du navigateur. Comme ça, l'utilisateur peut-être récupéré
       // dans toute l'application et conservé même après
       // fermeture du navigateur
       window.localStorage.setItem(
-        "user",
+        'user',
         JSON.stringify({
           id: credential.user.uid,
           email: credential.user.email,
-        })
-      );
+        }),
+      )
 
-      setLoading(false);
-      navigate("/");
+      setLoading(false)
+      navigate('/')
     } catch (e) {
-      setError(e.message);
-      setLoading(false);
+      setError(e.message)
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <>
@@ -72,5 +68,5 @@ export default function Login() {
         </Link>
       </form>
     </>
-  );
+  )
 }
